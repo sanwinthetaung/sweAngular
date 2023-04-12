@@ -1,0 +1,39 @@
+<h1 mat-dialog-title>{{ 'dashboard.editDialog.title' | translate}}</h1>
+<div mat-dialog-content>
+  <form [formGroup]="form">
+
+    <p>
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>{{ 'dashboard.editDialog.login' | translate}}</mat-label>
+        <input matInput placeholder="{{ 'dashboard.editDialog.login' | translate}}" [formControlName]="'login'">
+        <mat-error *ngIf="form.controls['login'].hasError('required')">
+          {{ 'dashboard.editDialog.loginIs' | translate}} <strong>{{ 'dashboard.editDialog.required' | translate}}</strong>
+        </mat-error>
+      </mat-form-field>
+    </p>
+
+    <p>
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>{{ 'dashboard.editDialog.name' | translate}}</mat-label>
+        <input matInput placeholder="{{ 'dashboard.editDialog.name' | translate}}" [formControlName]="'name'">
+        <mat-error *ngIf="form.controls['name'].hasError('required')">
+          {{ 'dashboard.editDialog.nameIs' | translate}} <strong>{{ 'dashboard.editDialog.required' | translate}}</strong>
+        </mat-error>
+      </mat-form-field>
+    </p>
+
+    <p>
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>{{ 'dashboard.editDialog.salary' | translate}}</mat-label>
+        <input matInput OnlyNumber="true" placeholder="salary" [formControlName]="'salary'">
+        <mat-error *ngIf="form.controls['salary'].hasError('required')">
+          {{ 'dashboard.editDialog.salaryIs' | translate}} <strong>{{ 'dashboard.editDialog.required' | translate}}</strong>
+        </mat-error>
+      </mat-form-field>
+    </p>
+  </form>
+</div>
+<div mat-dialog-actions align="center">
+  <button mat-button cdkFocusInitial (click)="save()">Submit</button>
+  <button mat-button mat-dialog-close>Cancel</button>
+</div>

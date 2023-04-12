@@ -1,0 +1,53 @@
+{
+  "dashboard": {
+    "title": "SWE",
+    "language": "language",
+    "employee": "Employee",
+    "addEmployee": "Add Employee",
+    "importCsvFile": "Import CSV file",
+    "upload": "Upload",
+    "minSalary": "Min Salary",
+    "maxSalary": "Max Salary",
+    "search": "Search",
+    "table" : {
+      "employeeId": "EmployeeId",
+      "login": "Login",
+      "name": "Name",
+      "salary": "Salary",
+      "action": "Action",
+      "noRecordFound": "No record Found"
+    },
+    "confirmDialog": {
+      "title": "Confirm Delete?",
+      "deleteEmpId": "Would you like to delete Employee: ",
+      "ok": "Ok",
+      "cancel": "Cancel"
+    },
+    "editDialog": {
+      "title": "Edit Employee",
+      "login": "Login",
+      "loginIs": "Login is",
+      "required": "required",
+      "name": "Name",
+      "nameIs": "Name is",
+      "salary": "Salary",
+      "salaryIs": "Salary is",
+      "submit": "Submit",
+      "cancel": "Cancel"
+    },
+    "createDialog": {
+      "title": "Create Employee",
+      "employeeId": "EmployeeId",
+      "employeeIdIs": "EmployeeId is",
+      "required": "required",
+      "login": "Login",
+      "loginIs": "Login is",
+      "name": "Name",
+      "nameIs": "Name is",
+      "salary": "Salary",
+      "salaryIs": "Salary is",
+      "submit": "Submit",
+      "cancel": "Cancel"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+<h1 mat-dialog-title>{{ 'dashboard.confirmDialog.title' | translate}}</h1>
+<div mat-dialog-content>
+  {{ 'dashboard.confirmDialog.deleteEmpId' | translate}} {{employeeId}}?
+</div>
+<div mat-dialog-actions align="center">
+  <button mat-button mat-dialog-close (click)="onOk()">{{ 'dashboard.confirmDialog.ok' | translate}}</button>
+  <button mat-button mat-dialog-close cdkFocusInitial (click)="onCancel()">{{ 'dashboard.confirmDialog.cancel' | translate}}</button>
+</div>

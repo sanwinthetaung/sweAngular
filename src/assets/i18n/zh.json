@@ -1,0 +1,53 @@
+{
+  "dashboard": {
+    "title": "SWE",
+    "language": "语言",
+    "employee": "员工",
+    "addEmployee": "添加员工",
+    "importCsvFile": "导入 CSV 文件",
+    "upload": "上传",
+    "minSalary": "最低工资",
+    "maxSalary": "最高工资",
+    "search": "搜索",
+    "table" : {
+      "employeeId": "员工ID",
+      "login": "登录",
+      "name": "姓名",
+      "salary": "薪水",
+      "action": "行动",
+      "noRecordFound": "没有找到记录"
+    },
+    "confirmDialog": {
+      "title": "确认删除？",
+      "deleteEmpId": "是否要删除员工： ",
+      "ok": "好的",
+      "cancel": "取消"
+    },
+    "editDialog": {
+      "title": "编辑员工",
+      "login": "登录",
+      "loginIs": "登录是",
+      "required": "必需的",
+      "name": "姓名",
+      "nameIs": "名字是",
+      "salary": "薪水",
+      "salaryIs": "工资是",
+      "submit": "提交",
+      "cancel": "取消"
+    },
+    "createDialog": {
+      "title": "创建员工",
+      "employeeId": "员工ID",
+      "employeeIdIs": "员工ID 是",
+      "required": "必需的",
+      "login": "登录",
+      "loginIs": "登录是",
+      "name": "姓名",
+      "nameIs": "名字是",
+      "salary": "薪水",
+      "salaryIs": "工资是",
+      "submit": "提交",
+      "cancel": "取消"
+    }
+  }
+}

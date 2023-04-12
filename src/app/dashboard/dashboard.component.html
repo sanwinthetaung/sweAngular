@@ -1,0 +1,78 @@
+<div class="container">
+  <h5 class="text-center mt-3">{{'dashboard.employee' | translate }}</h5>
+
+  <div class="d-flex my-2">
+    <button mat-flat-button color="primary" type="button" (click)="create('0ms', '0ms')" >
+      {{'dashboard.addEmployee' | translate }}
+    </button>
+  </div>
+  <hr>
+
+  <div class="d-flex my-2">
+    <label>
+      <label class="px-2">{{'dashboard.importCsvFile' | translate}} : </label>
+      <input class="w-75" type="file" accept="text/csv" (change)="selectFile($event)" />
+    </label>
+
+    <button mat-flat-button class="mt-4" color="primary" type="button" [disabled]="!selectedFiles" (click)="upload()" >
+      {{'dashboard.upload' | translate}}
+    </button>
+  </div>
+
+  <hr>
+
+  <form [formGroup]="form" (submit)="search()">
+    <div class="search-container">
+      <mat-form-field appearance="fill">
+        <mat-label>{{ 'dashboard.minSalary' | translate }}</mat-label>
+        <input matInput OnlyNumber="true" #input maxlength="10" placeholder="0" [formControlName]="'minSalary'">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>{{ 'dashboard.maxSalary' | translate }}</mat-label>
+        <input matInput OnlyNumber="true" #input maxlength="10" placeholder="4000" [formControlName]="'maxSalary'" >
+      </mat-form-field>
+
+      <button mat-flat-button color="primary" type="submit" >{{'dashboard.search' | translate}}</button>
+    </div>
+  </form>
+
+  <div class="table-responsive">
+    <table class="table table-bordered p-0 m-0" matSort (matSortChange)="sortData($event)">
+      <thead>
+      <tr>
+        <th scope="col">{{ 'dashboard.table.employeeId' | translate }}</th>
+        <th scope="col" mat-sort-header="login">{{ 'dashboard.table.login' | translate }}</th>
+        <th scope="col" mat-sort-header="name">{{ 'dashboard.table.name' | translate }}</th>
+        <th scope="col" mat-sort-header="salary">{{ 'dashboard.table.salary' | translate }}</th>
+        <th scope="col">{{ 'dashboard.table.action' | translate }}</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr scope="row" *ngFor="let emp of employees">
+        <td>{{ emp.employeeId }}</td>
+        <td>{{ emp.login }}</td>
+        <td>{{ emp.name }}</td>
+        <td>{{ emp.salary }}</td>
+        <td>
+          <button mat-icon-button color="primary"
+                  (click)="edit('0ms', '0ms', emp.employeeId!)">
+            <mat-icon>edit</mat-icon>
+          </button>
+
+          <button mat-icon-button color="warn"
+                  (click)="delete('0ms', '0ms', emp.employeeId!)">
+            <mat-icon>delete</mat-icon>
+          </button>
+
+        </td>
+      </tr>
+      <tr scope="row" *ngIf="employees.length === 0">
+        <td colspan="6" class="text-center">{{ 'dashboard.table.noRecordFound' | translate }}</td>
+      </tr>
+      </tbody>
+    </table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" [pageSize]="limit" [length]="totalElements" (page)="nextPage($event)"> </mat-paginator>
+
+  </div>
+</div>
